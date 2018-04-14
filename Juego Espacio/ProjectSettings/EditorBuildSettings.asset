@@ -6,11 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TMPMenu.unity
-    guid: dc41dc2cbb3cd7146bae5e8eb50b74e8
-  - enabled: 1
-    path: Assets/Scenes/Scene01.unity
+    path: Assets/Scenes/1-NaveLaberinto.unity
     guid: 97295176b0a5bec469ef856da6e2c9c9
-  - enabled: 1
-    path: Assets/Scenes/Scene02.unity
-    guid: 435713f46025f0a47962a784d3edef63
