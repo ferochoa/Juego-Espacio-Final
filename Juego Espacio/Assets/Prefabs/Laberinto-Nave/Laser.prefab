@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
+  Explison: {fileID: 1380758490269358, guid: e678491b62f665943af763897ca923fe, type: 2}
 --- !u!120 &120175979206087530
 LineRenderer:
   m_ObjectHideFlags: 1

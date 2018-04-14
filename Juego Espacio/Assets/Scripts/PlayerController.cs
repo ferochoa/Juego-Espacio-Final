@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 	private GameObject shotSpawn_1;
 	public GameObject bullet;
    
-    public bool m_up, m_down;
+    public bool m_up, m_down,ver;
 
     private int dir;
 
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour {
 		lives = 5;
         m_up = false;
         m_down = false;
+        ver = true;
         middleHigh = transform.position.y;
 	}
 	void FixedUpdate()
@@ -71,7 +72,11 @@ public class PlayerController : MonoBehaviour {
             }
             else
             {
-                m_up = false;
+                if(ver == true)
+                {
+                    ver = false;
+                    StartCoroutine(movingUp());
+                }
             }
         }
         else
@@ -85,7 +90,11 @@ public class PlayerController : MonoBehaviour {
                 }
                 else
                 {
-                    m_down = false;
+                    if (ver == true)
+                    {
+                        ver = false;
+                        StartCoroutine(movingDown());
+                    }
                 }
             }
             else
@@ -155,16 +164,26 @@ public class PlayerController : MonoBehaviour {
 	#region coroutines
 	IEnumerator movingUp()
 	{
-		movement = new Vector3 (direction, 5f, 0f);
-		yield return new WaitForSeconds (.5f);
+        yield return new WaitForSeconds(3f);
+        m_up = false;
+        ver = true;
+
+        /*movement = new Vector3 (direction, 5f, 0f);
+		yield return new WaitForSeconds (3f);
 		movement = new Vector3 (direction, -5f, 0f);
 		yield return new WaitForSeconds (.6f);
 		movement = new Vector3 (direction, 0.0f, 1f);
 		//Vector3 temp = new Vector3 (direction, 415f, 0.0f);
 		//this.gameObject.transform.position = temp;
-	}
+        */
+    }
 	IEnumerator movingDown()
 	{
+
+        yield return new WaitForSeconds(3f);
+        m_down = false;
+        ver = true;
+        /*
 		movement = new Vector3 (direction, -5f, -0);
 		yield return new WaitForSeconds (.5f);
 		movement = new Vector3 (direction, 5f, 0f);
@@ -172,6 +191,9 @@ public class PlayerController : MonoBehaviour {
 		movement = new Vector3 (direction, 0.0f, 1f);
 		//Vector3 temp = new Vector3 (direction, 415f, 0.0f);
 		//this.gameObject.transform.position = temp;
-	}
+        */
+    }
+
+
 	#endregion
 }

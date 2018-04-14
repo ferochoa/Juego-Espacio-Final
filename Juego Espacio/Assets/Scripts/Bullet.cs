@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour {
 
 		}
 
-		Explison.SetActive (true);
+        Instantiate(Explison, transform.position, Quaternion.identity);
 		destroy ();
 	}
 }

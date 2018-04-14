@@ -5,14 +5,13 @@ using UnityEngine;
 public class NaveMove : MonoBehaviour 
 {
     public float speed;
-    Vector3 direction;
+    private Vector3 direction;
 		
 	void Start () 
 	{
         direction = Vector3.zero;
 	}
 	
-		
 	void Update () 
 	{
         Move();
@@ -22,12 +21,15 @@ public class NaveMove : MonoBehaviour
     {
         transform.Translate(direction.x * Time.deltaTime * speed, direction.y * Time.deltaTime, speed * Time.deltaTime);
 
-        if(direction.y > 0)
+        if(direction.y > 0 && transform.position.y > direction.y)
         {
-            if(transform.position.y > direction.y)
-            {
-                direction = Vector3.zero;
-            }
+            float temp_y = direction.y;
+            direction = Vector3.zero;
+            StartCoroutine(GoMiddle(temp_y));
+        }
+        else
+        {
+
         }
     }
 
@@ -41,5 +43,10 @@ public class NaveMove : MonoBehaviour
         direction = new Vector3(0, Yaxis, 0);
     }
 
+    IEnumerator GoMiddle(float Height)
+    {
+        yield return new WaitForSeconds(3f);
 
+        direction = new Vector3(0, (Height * -1),0);
+    }
 }
