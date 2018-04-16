@@ -360,7 +360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &57913818
 Rigidbody2D:
   serializedVersion: 4
@@ -742,7 +742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &562553850
 Rigidbody2D:
   serializedVersion: 4
@@ -1423,11 +1423,11 @@ RectTransform:
   m_Father: {fileID: 1968143496}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 256, y: 72}
-  m_SizeDelta: {x: 162.4, y: 146.5}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -42.1698, y: 70}
+  m_SizeDelta: {x: 162.3999, y: 146.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &2084434535
 MonoBehaviour:
   m_ObjectHideFlags: 0
