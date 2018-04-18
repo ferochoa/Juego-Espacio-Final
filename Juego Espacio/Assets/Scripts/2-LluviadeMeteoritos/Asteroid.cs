@@ -11,10 +11,10 @@ public class Asteroid : MonoBehaviour {
 	void Start()
 	{
 		Invoke ("destroy", lifeTime);
-		if (this.gameObject.tag == "left spawn")
-			forceVector = new Vector2 (Random.Range(3,8),-2);
 		if (this.gameObject.tag == "right spawn")
-			forceVector = new Vector2 (Random.Range(-7,-2), -2);
+			forceVector = new Vector2 (3,-3);
+		if (this.gameObject.tag == "left spawn")
+			forceVector = new Vector2 (-3, -3);
 		
 		addForce ();
 	}
