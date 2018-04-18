@@ -8,6 +8,10 @@ TagManager:
   - green Obstacle
   - purple Obstacle
   - bullet
+  - left spawn
+  - right spawn
+  - asteroid
+  - bullet_2
   layers:
   - Default
   - TransparentFX
