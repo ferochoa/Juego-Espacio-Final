@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, IPlayer {
 
 
     [SerializeField] private float speed;
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
         }
 		
 	}
-	private void move()
+	public void move()
 	{		
 		this.gameObject.GetComponent<Rigidbody> ().velocity = movement * speed;
         Y_move();
