@@ -15,7 +15,8 @@ public class Asteroid : MonoBehaviour {
 			forceVector = new Vector2 (3,-3);
 		if (this.gameObject.tag == "left spawn")
 			forceVector = new Vector2 (-3, -3);
-		
+		else
+			forceVector = new Vector2 (0, -3);
 		addForce ();
 	}
 
@@ -26,5 +27,12 @@ public class Asteroid : MonoBehaviour {
 	private void addForce()
 	{
 		this.gameObject.GetComponent<Rigidbody> ().AddForce (forceVector * force, ForceMode.Impulse);
+	}
+	void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.tag == "bullet") {
+			destroy ();
+			Destroy (col.gameObject);
+		}
 	}
 }

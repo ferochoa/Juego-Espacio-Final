@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TouchJoysticks/DemoScenes/LeftJoystickDemo.unity
+- path: Assets/Scenes/2-LluviadeMeteoritos.unity
   isLoaded: 1
   isActive: 1
