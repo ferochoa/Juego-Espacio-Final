@@ -32,7 +32,7 @@ public class LeftJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     private Vector2 bgImageStartPosition; // used to temporarily store the starting position of the joystick's background image (where it was placed on the canvas in the editor before play was pressed) in order to set the image back to this same position after setting the pivot to the bottom right corner of the image
 
     private void Start()
-    {
+    {		
         if (GetComponent<Image>() == null)
         {
             Debug.LogError("There is no joystick image attached to this script.");
@@ -48,14 +48,15 @@ public class LeftJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
             bgImage = GetComponent<Image>(); // gets the background image of this joystick
             joystickKnobImage = transform.GetChild(0).GetComponent<Image>(); // gets the joystick "knob" imae (the handle of the joystick), the joystick knob game object must be a child of this game object and have an image component 
             //bgImage.rectTransform.SetAsLastSibling(); // ensures that this joystick will always render on top of other UI elements
-            bgImage.rectTransform.GetWorldCorners(fourCornersArray); // fills the fourCornersArray with the world space positions of the four corners of the background image of this joystick
+            //bgImage.rectTransform.GetWorldCorners(fourCornersArray); // fills the fourCornersArray with the world space positions of the four corners of the background image of this joystick
 
-            bgImageStartPosition = fourCornersArray[3]; // saves the world space position of the bottom right hand corner of the background image of this joystick as the image was placed on the canvas before play was pressed 
+            //bgImageStartPosition = fourCornersArray[4]; // saves the world space position of the bottom right hand corner of the background image of this joystick as the image was placed on the canvas before play was pressed 
             bgImage.rectTransform.pivot = new Vector2(1, 0); // places the bottom right corner of background image of this joystick onto the pivot (wherever it may be in the canvas) 
 
             bgImage.rectTransform.anchorMin = new Vector2(0, 0); // sets the min anchors to the lower left corner of the canvas
             bgImage.rectTransform.anchorMax = new Vector2(0, 0); // sets the max anchors to the lower left corner of the canvas
-            bgImage.rectTransform.position = bgImageStartPosition; // sets the background image of this joystick back to the same position it was on the canvas before play was pressed
+            //bgImage.rectTransform.position = bgImageStartPosition; // sets the background image of this joystick back to the same position it was on the canvas before play was pressed
+
         }
 
     }
@@ -144,7 +145,7 @@ public class LeftJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
 
     // ouputs the direction vector, use this public function from another script to control movement of a game object (such as a player character or any desired game object)
     public Vector3 GetInputDirection()
-    {
+    {		
         return new Vector3(inputVector.x, inputVector.y, 0); 
     }
 }

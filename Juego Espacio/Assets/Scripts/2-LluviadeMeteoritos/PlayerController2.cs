@@ -21,12 +21,9 @@ public class PlayerController2 : MonoBehaviour,IPlayer {
 		shotSpawn_1 = GameObject.Find ("shotSpawn_1");	
 		lives = 5;
 	}
-
-	void Update()
+	void FixedUpdate()
 	{		
 		updatePlayerPosition();
-		/*if(Input.GetKeyDown(KeyCode.Space))
-		shoot ();*/
 	}
 	private void updatePlayerPosition()
 	{
@@ -54,9 +51,7 @@ public class PlayerController2 : MonoBehaviour,IPlayer {
 		SceneManager.LoadScene ("2-LluviadeMeteoritos");
 	}
 	public void shoot()
-	{
-		/*Instantiate (bullet, shotSpawn.transform.position, shotSpawn.transform.rotation);
-		Instantiate (bullet, shotSpawn_1.transform.position, shotSpawn_1.transform.rotation);*/
+	{		
 		Vector3 targetPosition = new Vector3 (target.transform.position.x,target.transform.position.y, target.transform.position.z);
 		Vector3 spawnPosition = new Vector3 (shotSpawn.transform.position.x,shotSpawn.transform.position.y,shotSpawn.transform.position.z);
 

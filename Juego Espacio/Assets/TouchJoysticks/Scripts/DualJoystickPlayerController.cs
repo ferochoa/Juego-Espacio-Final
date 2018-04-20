@@ -14,6 +14,7 @@ public class DualJoystickPlayerController : MonoBehaviour
 
     void Start()
     {
+		Debug.Log ("hola");
         if (transform.GetComponent<Rigidbody>() == null)
         {
             Debug.LogError("A RigidBody component is required on this game object.");
