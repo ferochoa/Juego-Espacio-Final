@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class NaveLife : MonoBehaviour {
 
-    int vida = 4;
+    [HideInInspector]
+    public int vida = 4;
 
     public GameObject[] estrellas;
 
     public Sprite estrellaInactiva;
+
+
 
     void EstrellaMuerta()
     {
@@ -25,6 +28,11 @@ public class NaveLife : MonoBehaviour {
             EstrellaMuerta();
             vida--;        
         }
+
+        if (collision.gameObject.tag == "morir")
+        {
+           vida = -1;
+        }
     }
 
     IEnumerator TitilaStop(int Vida)
@@ -33,4 +41,6 @@ public class NaveLife : MonoBehaviour {
 
         estrellas[Vida].GetComponent<Animator>().SetBool("Titilar", false);
     }
+
+
 }

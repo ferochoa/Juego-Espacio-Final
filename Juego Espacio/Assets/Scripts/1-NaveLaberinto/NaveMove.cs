@@ -8,7 +8,7 @@ public class NaveMove : MonoBehaviour
     private float shotRate;
     private float nextShot;
 
-    private Vector3 direction;
+    public Vector3 direction;
 
     private bool y_pos , y_neg;
 
@@ -16,8 +16,11 @@ public class NaveMove : MonoBehaviour
     private GameObject shotSpawn_1;
     public GameObject bullet;
 
+    public Camera Camera_OUT, Camera_IN;
+
     void Start () 
 	{
+        Time.timeScale = 1;
         direction = Vector3.zero;
         shotSpawn = GameObject.Find("shotSpawn");
         shotSpawn_1 = GameObject.Find("shotSpawn_1");
@@ -42,7 +45,7 @@ public class NaveMove : MonoBehaviour
             {
                 float temp_y = direction.y;
                 direction = Vector3.zero;
-                StartCoroutine(GoMiddle(temp_y));
+                //StartCoroutine(GoMiddle(temp_y));
             }
             else
             {
@@ -63,7 +66,7 @@ public class NaveMove : MonoBehaviour
                 {
                     float temp_y = direction.y;
                     direction = Vector3.zero;
-                    StartCoroutine(GoMiddle(temp_y));
+                    //StartCoroutine(GoMiddle(temp_y));
                 }
                 else
                 {
@@ -109,4 +112,48 @@ public class NaveMove : MonoBehaviour
 
         direction = new Vector3(0, (Height * -1),0);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "height")
+        {
+            if (transform.position.y < 0)
+            {
+                direction = new Vector3(0, (50), 0);
+            }
+            else
+            {
+                if(transform.position.y > 0)
+                {
+                    direction = new Vector3(0, (-50), 0);
+                }
+            }
+        }
+        
+        if(other.tag == "Cambio")
+        {
+            if (Camera_IN.gameObject.activeInHierarchy)
+            {
+                Camera_IN.gameObject.SetActive(false);
+                Camera_OUT.gameObject.SetActive(true);
+            }
+            else
+            {
+                Camera_IN.gameObject.SetActive(true);
+                Camera_OUT.gameObject.SetActive(false);
+            }
+        }
+        
+
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "morir")
+        {
+            Camera_IN.gameObject.SetActive(true);
+            Camera_OUT.gameObject.SetActive(false);
+        }
+    }
+
 }

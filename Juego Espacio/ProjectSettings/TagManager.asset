@@ -8,6 +8,9 @@ TagManager:
   - green Obstacle
   - purple Obstacle
   - bullet
+  - Cambio
+  - height
+  - morir
   layers:
   - Default
   - TransparentFX
