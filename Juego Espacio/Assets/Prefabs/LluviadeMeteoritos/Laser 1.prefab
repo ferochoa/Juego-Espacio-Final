@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4563550455846656}
   - component: {fileID: 120175979206087530}
-  - component: {fileID: 114325996440170726}
   - component: {fileID: 54641335144502412}
   - component: {fileID: 136591830650510456}
+  - component: {fileID: 114622169383177952}
   m_Layer: 8
-  m_Name: Laser
+  m_Name: Laser 1
   m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1124688153716820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 303.83624, y: -48.64, z: -557.59}
+  m_LocalPosition: {x: 152.81523, y: 353.65625, z: 2.3781817}
   m_LocalScale: {x: 1, y: 1, z: 5.9875007}
   m_Children:
   - {fileID: 4997930117391460}
@@ -175,7 +175,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 1
---- !u!114 &114325996440170726
+--- !u!114 &114622169383177952
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -183,11 +183,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124688153716820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c5370d735efe5d4a8cb954b363954be, type: 3}
+  m_Script: {fileID: 11500000, guid: c122cdbf8258aee4ca6325bb11bc0120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  Explison: {fileID: 1380758490269358, guid: e678491b62f665943af763897ca923fe, type: 2}
 --- !u!120 &120175979206087530
 LineRenderer:
   m_ObjectHideFlags: 1
