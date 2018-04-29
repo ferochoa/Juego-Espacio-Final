@@ -145,7 +145,10 @@ public class LeftJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
 
     // ouputs the direction vector, use this public function from another script to control movement of a game object (such as a player character or any desired game object)
     public Vector3 GetInputDirection()
-    {		
+    {	
+		//Debug.Log ("gg");	
+		Debug.Log (inputVector.x + " " + inputVector.y);
         return new Vector3(inputVector.x, inputVector.y, 0); 
+
     }
 }

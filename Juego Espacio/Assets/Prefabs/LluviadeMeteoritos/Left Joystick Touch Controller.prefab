@@ -52,4 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftJoystickBackgroundImage: {fileID: 0}
-  leftJoyStickAlwaysVisible: 0
+  leftJoyStickAlwaysVisible: 1

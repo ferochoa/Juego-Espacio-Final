@@ -18,6 +18,9 @@ public class NaveMove : MonoBehaviour
 
     public Camera Camera_OUT, Camera_IN;
 
+	private Vector3 leftJoystickInput;
+	public LeftJoystick leftJoystick;
+
     void Start () 
 	{
         Time.timeScale = 1;
@@ -31,10 +34,25 @@ public class NaveMove : MonoBehaviour
 	void Update () 
 	{
         Move();
+		checkAxisValue ();
+		leftJoystickInput = leftJoystick.GetInputDirection();
     }
     
+	void checkAxisValue() // metodo q checkea el input del joystick, ejes "x" e "y"
+	{
+		if (leftJoystickInput.y > 0.9f) 			
+			SetHeight (50f);		
+		if (leftJoystickInput.y < -0.9f)
+			SetHeight (-50f);
+		if (leftJoystickInput.x > 0.9f)
+			SetDirection (1);
+		if (leftJoystickInput.x < -0.9f)
+			SetDirection (-1);
+		if (leftJoystickInput.x == 0)
+			SetDirection (0);
+	}
     void Move()
-    {
+    {		
         //Movimiento continuo de la nave
         transform.Translate(direction.x * Time.deltaTime * speed, direction.y * Time.deltaTime, speed * Time.deltaTime);
 
