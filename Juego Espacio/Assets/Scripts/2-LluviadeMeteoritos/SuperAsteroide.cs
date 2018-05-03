@@ -15,7 +15,7 @@ public class SuperAsteroide : MonoBehaviour {
 	
 	void Update ()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 5f);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 1f);
 	}
 
     private void OnCollisionEnter(Collision collision)
