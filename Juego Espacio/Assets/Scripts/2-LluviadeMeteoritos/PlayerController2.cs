@@ -24,6 +24,7 @@ public class PlayerController2 : MonoBehaviour,IPlayer {
 	void FixedUpdate()
 	{		
 		updatePlayerPosition();
+		Debug.Log (lives);
 	}
 	private void updatePlayerPosition()
 	{

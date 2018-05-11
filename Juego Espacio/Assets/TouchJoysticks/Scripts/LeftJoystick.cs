@@ -147,7 +147,7 @@ public class LeftJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     public Vector3 GetInputDirection()
     {	
 		//Debug.Log ("gg");	
-		Debug.Log (inputVector.x + " " + inputVector.y);
+		//Debug.Log (inputVector.x + " " + inputVector.y);
         return new Vector3(inputVector.x, inputVector.y, 0); 
 
     }
