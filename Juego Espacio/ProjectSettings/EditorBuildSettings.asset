@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2-LluviadeMeteoritos.unity
     guid: 9f3a0952f6e92f14f96c171723545655
+  - enabled: 1
+    path: Assets/Scenes/3-WonderBoy.unity
+    guid: a5ef4666a717b6f42bc1df25484d4e52
