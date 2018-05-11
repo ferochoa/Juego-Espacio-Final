@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/2-LluviadeMeteoritos.unity
-  isLoaded: 1
-  isActive: 1
