@@ -13,7 +13,7 @@ public class PlayerController2 : MonoBehaviour,IPlayer {
 	public GameObject target;
 	public GameObject target_1;
 	public GameObject bulletTrail;
-	private int lives;
+	public int lives;
 
 	void Start()
 	{
