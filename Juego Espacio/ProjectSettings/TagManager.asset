@@ -14,6 +14,9 @@ TagManager:
   - Caracol
   - Empanada
   - Muerto
+  - right spawn
+  - left spawn
+  - obstacle_asteroid
   layers:
   - Default
   - TransparentFX
