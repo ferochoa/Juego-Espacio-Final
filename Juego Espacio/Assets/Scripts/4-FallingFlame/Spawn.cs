@@ -22,10 +22,6 @@ public class Spawn : MonoBehaviour {
 
 		StartCoroutine (timer());
 	}
-	void Update()
-	{
-
-	}
 	private void setSpawnPosition()
 	{
 		float position = Random.Range (xLeftLimit,xRightLimit);

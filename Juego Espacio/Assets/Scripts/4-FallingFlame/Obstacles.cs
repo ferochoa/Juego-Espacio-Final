@@ -9,12 +9,9 @@ public class Obstacles : MonoBehaviour {
 	void Start () {
 		Invoke ("destroy", 4);
 	}
-
-
 	void Update () {
 		transform.Translate (-Vector3.up * Time.deltaTime * speed);
 	}
-
 	void destroy()
 	{
 		Destroy (this.gameObject);
